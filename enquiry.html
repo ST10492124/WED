@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enquiry - Tlotlego's Electric Solutions</title>
+  <meta name="description" content="Send an enquiry for services or volunteering. Get instant estimated costs.">
+  <meta name="keywords" content="enquiry, quote, estimate, electrician, Pretoria">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="images/logo.png" alt="Tlotlego's Electric Solutions logo"/>
+      <span>Tlotlego's Electric Solutions</span>
+    </a>
+    <nav aria-label="Primary Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="enquiry.html" class="active">Enquiry</a></li>
+        <li><a href="tel:+27767986104">24/7: 076 798 6104</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Service Enquiry</h1>
+    <p>Use this form to request a quote, enquire about volunteering, or becoming a sponsor.</p>
+
+    <form id="enquiryForm" novalidate>
+      <div class="field">
+        <label for="ename">Full Name</label>
+        <input id="ename" name="name" type="text" required minlength="2" placeholder="Your full name">
+      </div>
+      <div class="field">
+        <label for="eemail">Email</label>
+        <input id="eemail" name="email" type="email" required placeholder="you@example.com">
+      </div>
+      <div class="field">
+        <label for="ephone">Phone</label>
+        <input id="ephone" name="phone" type="tel" required pattern="^\+?\d{9,15}$" placeholder="+27 82 123 4567">
+      </div>
+      <div class="field">
+        <label for="etype">Enquiry Type</label>
+        <select id="etype" name="type" required>
+          <option value="">Choose an option…</option>
+          <option value="service">Service Quote</option>
+          <option value="volunteer">Volunteer</option>
+          <option value="sponsor">Sponsor</option>
+        </select>
+      </div>
+      <div class="field" id="serviceBlock" style="display:none;">
+        <label for="eservice">Service</label>
+        <select id="eservice" name="service">
+          <option value="">Choose a service…</option>
+          <option value="callout">Emergency Call-out</option>
+          <option value="coc">COC Inspection</option>
+          <option value="rewire">Rewiring & Install</option>
+          <option value="lighting">Lighting Upgrade</option>
+          <option value="solar">Solar Site Survey</option>
+        </select>
+      </div>
+      <div class="field" id="unitsBlock" style="display:none;">
+        <label for="units">Estimate units (e.g., number of points / panels)</label>
+        <input id="units" name="units" type="number" min="1" value="1">
+      </div>
+      <div class="field">
+        <label for="emessage">Details</label>
+        <textarea id="emessage" name="message" rows="5" minlength="10" placeholder="Tell us what you need…"></textarea>
+      </div>
+      <button type="submit">Get Estimate</button>
+    </form>
+
+    <section id="estimateResult" style="display:none; margin-top:1.5rem;"></section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tlotlego's Electric Solutions • Pretoria</p>
+    <nav aria-label="Footer Navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,490 @@
+css/* CSS Styling for Desktop Solution - Part 2 Assignment */
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f8f9fa;
+}
+
+/* 2.1 External Stylesheet - linked to all HTML pages */
+/* 2.2 Base Style - consistent styling across website */
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #1e4080 0%, #2c5aa0 100%);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Logo and Company Name */
+header a:first-child {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    border-radius: 8px;
+}
+
+/* 2.3 Typography Styles */
+/* Font-family, font-size, font-weight, line-height, letter-spacing */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1e4080;
+    text-align: center;
+    border-bottom: 4px solid #ffd700;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #1e4080;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #1e4080;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    letter-spacing: 0.01em;
+}
+
+/* 2.4 Layout Structure using CSS Grid and Flexbox */
+/* Navigation */
+nav {
+    padding: 0 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: inline-block;
+}
+
+/* 2.5 Visual Styles - color, background-color, border, box-shadow */
+nav a:hover,
+nav a.active {
+    background-color: #ffd700;
+    color: #1e4080;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 2px solid #ffd700;
+}
+
+/* Emergency hotline styling */
+nav a[href^="tel:"] {
+    background-color: #ffd700;
+    color: #1e4080;
+    font-weight: 700;
+    border: 2px solid #ffd700;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Main Content Layout */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, rgba(30, 64, 128, 0.9), rgba(44, 90, 160, 0.9));
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    color: white;
+    border: none;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+/* CTA Buttons */
+.hero-section div a {
+    display: inline-block;
+    margin: 0.5rem 1rem;
+    padding: 1rem 2rem;
+    background-color: #ffd700;
+    color: #1e4080;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    border: 2px solid #ffd700;
+}
+
+.hero-section div a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    background-color: white;
+}
+
+/* Grid Layout for Services */
+.services-section div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Service Cards */
+article {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 3px solid transparent;
+}
+
+article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(30, 64, 128, 0.15);
+    border-color: #ffd700;
+}
+
+article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+/* Services Grid Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+figure {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(30, 64, 128, 0.15);
+}
+
+figure img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+figcaption {
+    padding: 1.5rem;
+    font-weight: 600;
+    color: #1e4080;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Testimonials */
+blockquote {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 1rem 0;
+    font-style: italic;
+    font-size: 1.1rem;
+    border-left: 5px solid #ffd700;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+blockquote::before {
+    content: '"';
+    font-size: 4rem;
+    color: #ffd700;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-family: serif;
+}
+
+/* Contact Form Styling */
+.contact-split {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.field {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1e4080;
+    font-size: 1rem;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+}
+
+button[type="submit"] {
+    background: linear-gradient(135deg, #1e4080, #2c5aa0);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(30, 64, 128, 0.3);
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(30, 64, 128, 0.4);
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, #444 0%, #222 100%);
+    color: white;
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+footer nav a {
+    color: #ffd700;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer nav a:hover,
+footer nav a.active {
+    color: white;
+}
+
+/* 3. Responsive Design */
+/* 3.1 Breakpoints for desktop, tablet, mobile */
+@media screen and (max-width: 1024px) {
+    /* Tablet styles */
+    .services-section div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* 3.2 Relative units - em, rem, % */
+@media screen and (max-width: 768px) {
+    /* Mobile tablet styles */
+    header a:first-child {
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .services-section div,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-split {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+    
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    /* Use % for responsive widths */
+    main {
+        width: 95%;
+        margin: 1rem auto;
+    }
+}
+
+/* 3.3 Responsive images using srcset and sizes */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 480px) {
+    /* Mobile phone styles */
+    .hero-section h1 {
+        font-size: 1.6rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    .contact-split {
+        padding: 1.5rem;
+    }
+    
+    article {
+        padding: 1rem;
+    }
+    
+    /* Use em for scalable text */
+    p {
+        font-size: 0.9em;
+    }
+}
+
+/* 3.4 Testing and iteration - optimized for different devices */
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Animation for better UX */
+.reveal {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CSS Reset for browser consistency */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e4080;
+    border-radius: 4px;
+}
