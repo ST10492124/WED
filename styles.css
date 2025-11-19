@@ -378,14 +378,16 @@ footer nav a.active {
 
 /* 3.2 Relative units - em, rem, % */
 @media screen and (max-width: 768px) {
-    /* Mobile tablet styles */
-    header a:first-child {
-        flex-direction: column;
-        text-align: center;
-        font-size: 1.2rem;
-        padding: 1rem;
+
+    /* Reduce header padding */
+    header {
+        padding: 0.5rem 0;
     }
-    
+     header a:first-child {
+        font-size: 1rem;
+        padding: 0.5rem;
+        flex-direction: row;
+    }
     nav ul {
         flex-direction: column;
         gap: 0.5rem;
@@ -487,4 +489,43 @@ img {
 ::-webkit-scrollbar-thumb {
     background: #1e4080;
     border-radius: 4px;
+
+}
+@media screen and (max-width: 768px) {
+
+    /* Reduce header padding */
+    header {
+        padding: 0.5rem 0;
+    }
+
+    /* Make logo + name smaller */
+    header a:first-child {
+        font-size: 1rem;
+        padding: 0.5rem;
+        flex-direction: row;
+    }
+
+    header img {
+        width: 35px;
+        height: 35px;
+        margin-right: 0.5rem;
+    }
+
+    /* MOBILE NAVIGATION FIX */
+    nav ul {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    nav a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+        border-radius: 15px;
+    }
+
+    /* Reduce size of emergency hotline button */
+    nav a[href^="tel:"] {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
 }
